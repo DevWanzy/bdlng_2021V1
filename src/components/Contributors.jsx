@@ -1,33 +1,33 @@
-import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState, useEffect } from "react";
-import "./styles/contributors.css";
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState, useEffect } from 'react';
+import './styles/contributors.css';
 
 function Contributors() {
   const [contributors, setContributors] = useState([
     {
-      name: "Mzungu Fulani",
-      title: "Researcher - University of Columbia",
+      name: 'Mzungu Fulani',
+      title: 'Researcher - University of Columbia',
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Consequuntur ducimus quam tempora commodi illum soluta pariatur at expedita minima dignissimos? 
             Quidem nostrum harum dolores quis quasi itaque id quos enim.`,
-      image: "images/contributors/mzungu.jpg",
+      image: 'images/contributors/mzungu.jpg',
     },
     {
-      name: "Job Obiri",
-      title: "Software Developer - Obisoft",
+      name: 'Job Obiri',
+      title: 'Software Developer - Obisoft',
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Consequuntur ducimus quam tempora commodi illum soluta pariatur at expedita minima dignissimos? 
         Quidem nostrum harum dolores quis quasi itaque id quos enim.`,
-      image: "images/contributors/job.jpg",
+      image: 'images/contributors/job.jpg',
     },
     {
-      name: "Sharon Isabella",
-      title: "Student - Kisii University",
+      name: 'Sharon Isabella',
+      title: 'Student - Kisii University',
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Consequuntur ducimus quam tempora commodi illum soluta pariatur at expedita minima dignissimos? 
         Quidem nostrum harum dolores quis quasi itaque id quos enim.`,
-      image: "images/contributors/mama.jpg",
+      image: 'images/contributors/mama.jpg',
     },
   ]);
   const [current, setCurrent] = useState(null);
@@ -38,8 +38,8 @@ function Contributors() {
   }, []);
 
   function setSl(n) {
-    let sls = document.querySelectorAll(".cont-sel");
-    sls.forEach((s) => s.classList.remove("cont-s"));
+    let sls = document.querySelectorAll('.cont-sel');
+    sls.forEach((s) => s.classList.remove('cont-s'));
     let cl = contributors[n];
     setCurrent(cl);
     // sls[n].classList.add("cont-s");

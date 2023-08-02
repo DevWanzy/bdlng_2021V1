@@ -1,30 +1,32 @@
-import React, { useState, useEffect } from "react";
-import "./styles/history.css";
-import gsap from "gsap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/fontawesome-free-solid";
-import { motion } from "framer-motion/dist/framer-motion";
-import Clans from "../components/Clans";
-import Collection from "../components/Collection";
-import { NavLink } from "react-router-dom";
-import c from "../constants";
+import React, { useState, useEffect } from 'react';
+import './styles/history.css';
+import gsap from 'gsap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/fontawesome-free-solid';
+import { motion } from 'framer-motion/dist/framer-motion';
+import Clans from '../components/Clans';
+import Collection from '../components/Collection';
+import { NavLink } from 'react-router-dom';
+import c from '../constants';
+import Stories from './Stories';
+import Origin from '../components/origin';
 
 function History() {
   const [items, setItems] = useState([
     {
       label: "Budalang'i Floods and its Consequenses",
-      by: "Job Obiri",
-      image: "images/luhyalady.jpg",
+      by: 'Job Obiri',
+      image: 'images/luhyalady.jpg',
     },
     {
-      label: "Ecological Origin of Political System & Leadership",
-      by: "Davis Okello",
-      image: "images/luhyachildren.jpg",
+      label: 'Ecological Origin of Political System & Leadership',
+      by: 'Davis Okello',
+      image: 'images/luhyachildren.jpg',
     },
     {
-      label: "Heros and Heroines",
-      by: "Rev. Fr. Mandela",
-      image: "images/luhyamum.jpg",
+      label: 'Heros and Heroines',
+      by: 'Rev. Fr. Mandela',
+      image: 'images/luhyamum.jpg',
     },
   ]);
   const [sports, setSports] = useState([]);
@@ -38,7 +40,7 @@ function History() {
     }
   }
   function getPopular(count) {
-    c.jsonGet(`/stories/limited/${count}`, "")
+    c.jsonGet(`/stories/limited/${count}`, '')
       .then(async (s) => {
         if (s.ok) {
           let ss = await s.json();
@@ -48,7 +50,7 @@ function History() {
       .catch();
   }
   function getSports(count) {
-    c.jsonGet(`/sports`, "")
+    c.jsonGet(`/sports`, '')
       .then(async (s) => {
         if (s.ok) {
           let ss = await s.json();
@@ -68,17 +70,17 @@ function History() {
   }, []);
 
   function selectSection(s, e) {
-    let n = document.querySelectorAll(".h-nav-item");
+    let n = document.querySelectorAll('.h-nav-item');
     for (let x of n) {
-      x.classList.remove("sel");
+      x.classList.remove('sel');
     }
-    e.target.classList.add("sel");
-    let c = document.querySelectorAll(".history > .h-content");
+    e.target.classList.add('sel');
+    let c = document.querySelectorAll('.history > .h-content');
     for (let x of c) {
-      x.style.display = "none";
+      x.style.display = 'none';
     }
     // console.log(`#${s}`);
-    document.querySelector(`#${s}`).style.display = "flex";
+    document.querySelector(`#${s}`).style.display = 'flex';
   }
 
   function setCarousel(s) {
@@ -86,21 +88,21 @@ function History() {
     if (current === s) {
     } else {
       // setCurrent(s);
-      const lgs = document.querySelectorAll(".h-legend");
-      lgs.forEach((l) => l.classList.remove("sel"));
-      lgs[s].classList.add("sel");
-      gsap.to(".h-label", 1, { opacity: 0, x: "100%" });
+      const lgs = document.querySelectorAll('.h-legend');
+      lgs.forEach((l) => l.classList.remove('sel'));
+      lgs[s].classList.add('sel');
+      gsap.to('.h-label', 1, { opacity: 0, x: '100%' });
       gsap
-        .to(".h-carousel", 0.3, { opacity: 0, scale: 0.99 })
+        .to('.h-carousel', 0.3, { opacity: 0, scale: 0.99 })
         .then(() => setCurrent(s))
         .then((s) => {
           gsap.fromTo(
-            ".h-label",
+            '.h-label',
             1,
-            { x: "-100%", opacity: 0 },
+            { x: '-100%', opacity: 0 },
             { x: 0, opacity: 1 }
           );
-          gsap.to(".h-carousel", 0.3, { opacity: 1, scale: 1 });
+          gsap.to('.h-carousel', 0.3, { opacity: 1, scale: 1 });
         });
     }
   }
@@ -111,10 +113,10 @@ function History() {
         className="ti"
         style={{
           backgroundImage: 'url("/images/africastudents.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          boxShadow: "inset var(--black) 0 0 200px",
-          backgroundAttachment: "fixed",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          boxShadow: 'inset var(--black) 0 0 200px',
+          backgroundAttachment: 'fixed',
         }}
       >
         Our History
@@ -122,19 +124,19 @@ function History() {
       <div className="h-nav">
         <div
           className="h-nav-item sel"
-          onClick={(e) => selectSection("introduction", e)}
+          onClick={(e) => selectSection('introduction', e)}
         >
           <FontAwesomeIcon icon={faHome} />
         </div>
-        <div className="h-nav-item" onClick={(e) => selectSection("origin", e)}>
+        <div className="h-nav-item" onClick={(e) => selectSection('origin', e)}>
           Origin
         </div>
-        <div className="h-nav-item" onClick={(e) => selectSection("clans", e)}>
+        <div className="h-nav-item" onClick={(e) => selectSection('clans', e)}>
           Clans
         </div>
         <div
           className="h-nav-item"
-          onClick={(e) => selectSection("collections", e)}
+          onClick={(e) => selectSection('collections', e)}
         >
           Collections
         </div>
@@ -142,20 +144,20 @@ function History() {
       <div className="history">
         <div
           className="h-content"
-          style={{ display: "flex" }}
+          style={{ display: 'flex' }}
           id="introduction"
         >
           <div
             className="h-carousel"
             style={{
               backgroundImage: `url(${items[current].image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
           >
             <NavLink
               exact
-              to={"/stories/headline/" + items[current].label}
+              to={'/stories/headline/' + items[current].label}
               className="h-label"
             >
               <div className="h-title">{items[current].label}</div>
@@ -165,7 +167,7 @@ function History() {
               {items.map((i, a) => (
                 <div
                   onClick={() => setCarousel(a)}
-                  className={a === 0 ? "h-legend sel" : "h-legend"}
+                  className={a === 0 ? 'h-legend sel' : 'h-legend'}
                   style={{ backgroundImage: `url(${i.image})` }}
                 ></div>
               ))}
@@ -175,7 +177,7 @@ function History() {
             <div className="h-main">
               {sports.map(({ _id, label, image, link }, a) => (
                 <NavLink
-                  style={{ color: "inherit" }}
+                  style={{ color: 'inherit' }}
                   exact
                   to={`/stories/sport/${_id}`}
                 >
@@ -184,10 +186,10 @@ function History() {
                     animate={{ opacity: 1, scale: 1 }}
                     whileHover={{ scale: 1.05 }}
                     className="h-item"
-                    transition={{ type: "spring", stiffness: 300 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
                     style={{
                       backgroundImage: `url(${image})`,
-                      backgroundSize: "cover",
+                      backgroundSize: 'cover',
                     }}
                   >
                     <div className="h-item-label">{label}</div>
@@ -202,9 +204,9 @@ function History() {
                   <div className="h-side-item">
                     <div className="h-side-i">{a + 1}</div>
                     <NavLink
-                      style={{ textDecoration: "none" }}
+                      style={{ textDecoration: 'none' }}
                       exact
-                      to={`stories/story/${p._id}`}
+                      to={`/stories/story/${p._id}`}
                     >
                       <div className="h-side-l">{p.title}</div>
                     </NavLink>
@@ -214,13 +216,13 @@ function History() {
             </div>
           </div>
         </div>
-        <div className="h-content" style={{ display: "none" }} id="origin">
-          Origin
+        <div className="h-content" style={{ display: 'none' }} id="origin">
+          <Origin />
         </div>
-        <div className="h-content" style={{ display: "none" }} id="clans">
+        <div className="h-content" style={{ display: 'none' }} id="clans">
           <Clans />
         </div>
-        <div className="h-content" style={{ display: "none" }} id="collections">
+        <div className="h-content" style={{ display: 'none' }} id="collections">
           <Collection />
         </div>
       </div>

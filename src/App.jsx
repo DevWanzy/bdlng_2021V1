@@ -125,6 +125,11 @@ class App extends Component {
                     <Route exact path="/travel" component={Travel}></Route>
                     <Route
                       exact
+                      path="/stories/headline:/id"
+                      component={Stories}
+                    ></Route>
+                    <Route
+                      exact
                       path="/stories/:type/:story"
                       component={Stories}
                     ></Route>
