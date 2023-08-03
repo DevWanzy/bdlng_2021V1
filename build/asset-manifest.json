@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/https://DevWanzy.github.io/bdlng_2021V1/static/css/main.8c2e7fe2.chunk.css",
+    "main.js": "/https://DevWanzy.github.io/bdlng_2021V1/static/js/main.ac04da88.chunk.js",
+    "main.js.map": "/https://DevWanzy.github.io/bdlng_2021V1/static/js/main.ac04da88.chunk.js.map",
+    "runtime-main.js": "/https://DevWanzy.github.io/bdlng_2021V1/static/js/runtime-main.f023bbac.js",
+    "runtime-main.js.map": "/https://DevWanzy.github.io/bdlng_2021V1/static/js/runtime-main.f023bbac.js.map",
+    "static/js/2.5ed2914f.chunk.js": "/https://DevWanzy.github.io/bdlng_2021V1/static/js/2.5ed2914f.chunk.js",
+    "static/js/2.5ed2914f.chunk.js.map": "/https://DevWanzy.github.io/bdlng_2021V1/static/js/2.5ed2914f.chunk.js.map",
+    "index.html": "/https://DevWanzy.github.io/bdlng_2021V1/index.html",
+    "static/css/main.8c2e7fe2.chunk.css.map": "/https://DevWanzy.github.io/bdlng_2021V1/static/css/main.8c2e7fe2.chunk.css.map",
+    "static/js/2.5ed2914f.chunk.js.LICENSE.txt": "/https://DevWanzy.github.io/bdlng_2021V1/static/js/2.5ed2914f.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/https://DevWanzy.github.io/bdlng_2021V1/static/media/EuclidSquare-Semibold.25c88223.woff",
+    "static/media/africastudents.c9a6f9ca.jpg": "/https://DevWanzy.github.io/bdlng_2021V1/static/media/africastudents.c9a6f9ca.jpg",
+    "static/media/luhyachildren.655c9337.jpg": "/https://DevWanzy.github.io/bdlng_2021V1/static/media/luhyachildren.655c9337.jpg",
+    "static/media/luhyamum.768ebee6.jpg": "/https://DevWanzy.github.io/bdlng_2021V1/static/media/luhyamum.768ebee6.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f023bbac.js",
+    "static/js/2.5ed2914f.chunk.js",
+    "static/css/main.8c2e7fe2.chunk.css",
+    "static/js/main.ac04da88.chunk.js"
+  ]
+}
